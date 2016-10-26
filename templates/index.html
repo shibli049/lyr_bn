@@ -3,9 +3,9 @@
   <form action="{{ url_for('lyrics') }}" method="post" class="lyrics">
     Poet name:
     <!-- <input name="artist" type="text" /> -->
-      <select name="artist">
-        {% for n in ['sukumar roy'] %}
-          <option value="{{n}}">{{n}}</option>
+      <select name="artist" style="text-transform: capitalize;">
+        {% for n in ['sukumar roy', 'jibonanondo das', 'robi thakur'] %}
+          <option value="{{n}}" >Uttoradhunik {{n}}</option>
         {% endfor %}
       </select>
     <br />
