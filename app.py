@@ -3,6 +3,7 @@ from flask import Flask, render_template, url_for, redirect,request
 from wikisource import poet_parser
 from pymarkovchain import MarkovChain
 import logging
+import os
 logging.basicConfig(level=logging.INFO, format=' %(asctime)s - %(levelname)s - %(message)s')
 
 sukumar_roy_url = "https://goo.gl/Lcv5Vr"
@@ -10,7 +11,9 @@ jibonanondo_das_url="https://goo.gl/0YYcuI"
 robi_thakur_url="https://goo.gl/vzuTbf"
 
 app = Flask(__name__)
-app.debug = True
+app.debug = False
+app.config.from_object(__name__)
+
 
 @app.route('/', methods=['GET'])
 def index():
@@ -61,5 +64,7 @@ def lyrics():
     return render_template('lyrics.html', result=result, artist=artist)
 
 if __name__ == '__main__':
-    app.run()
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=PORT)
+
 
