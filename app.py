@@ -23,31 +23,39 @@ def index():
 def lyrics():
     artist = request.form['artist']
     lines = int(request.form['lines'])
-    size = max(int(request.form['size']), 5)
+    # size = max(int(request.form['size']), 5)
+    size = 5
 
     if not artist:
         return redirect(url_for('index'))
     artist = artist.lower()
 
     if('sukumar roy' == artist):
-        lyrics = poet_parser.getPeoms(\
-            poet_parser.getHtmlFromUrl(\
-                sukumar_roy_url),\
-            linkSelector="div.mw-category a",\
-            poemSelector = "div.poem center p",\
-            size=size)
+        lyrics = poet_parser.readFile(poet_parser.home + "/sukumar_roy.txt")
+
+        if(len(lyrics) == 0):
+            lyrics = poet_parser.getPeoms(\
+                poet_parser.getHtmlFromUrl(\
+                    sukumar_roy_url),\
+                linkSelector="div.mw-category a",\
+                poemSelector = "div.poem center p",\
+                size=size)
     elif('jibonanondo das' == artist):
-        lyrics = poet_parser.getPeoms(\
-            poet_parser.getHtmlFromUrl(\
-                jibonanondo_das_url),\
-            poemSelector = "div.poem p",\
-            size=size)
+        lyrics = poet_parser.readFile(poet_parser.home + "/jibonanondo_das.txt")
+        if(len(lyrics) == 0):
+            lyrics = poet_parser.getPeoms(\
+                poet_parser.getHtmlFromUrl(\
+                    jibonanondo_das_url),\
+                poemSelector = "div.poem p",\
+                size=size)
     elif('robi thakur' == artist):
-        lyrics = poet_parser.getPeoms(\
-            poet_parser.getHtmlFromUrl(\
-                robi_thakur_url),\
-            poemSelector = "div.poem p",\
-            size=size)
+        lyrics = poet_parser.readFile(poet_parser.home + "/robi_thakuru.txt")
+        if(len(lyrics) == 0):
+            lyrics = poet_parser.getPeoms(\
+                poet_parser.getHtmlFromUrl(\
+                    robi_thakur_url),\
+                poemSelector = "div.poem p",\
+                size=size)
     else:
         lyrics=""
 
