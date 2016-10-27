@@ -68,7 +68,8 @@ def lyrics():
             result.append(mc.generateString())
     else:
         result = ["No poet found!"]
-    logging.info(result)
+        logging.info(result)
+
     return render_template('lyrics.html', result=result, artist=artist)
 
 if __name__ == '__main__':
