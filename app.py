@@ -23,7 +23,7 @@ def index():
 def lyrics():
     artist = request.form['artist']
     lines = int(request.form['lines'])
-    # size = max(int(request.form['size']), 5)
+    version = max(int(request.form['version']), 1)
     size = 5
 
     if not artist:
@@ -63,9 +63,22 @@ def lyrics():
     logging.info(len(lyrics))
     if(len(lyrics) > 0 and len(lyrics.strip()) > 0):
         mc = MarkovChain()
-        mc.generateDatabase(lyrics,sentenceSep='[।!?\n]' )
+        if(version == 1):
+            sentenceSep='[।!?\n]'
+        else:
+            sentenceSep='[।!?\n\s]'
+
+        mc.generateDatabase(lyrics,sentenceSep=sentenceSep)
         for line in range(0, lines):
-            result.append(mc.generateString())
+            if(version == 1):
+                result.append(mc.generateString())
+            else:
+                word = mc.generateString()
+                lenWord = len(word)
+                for i in range(0,lenWord) :
+                    word += " " + mc.generateString()
+                result.append(word)
+
     else:
         result = ["No poet found!"]
         logging.info(result)
