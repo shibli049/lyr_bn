@@ -49,7 +49,7 @@ def lyrics():
                 poemSelector = "div.poem p",\
                 size=size)
     elif('robi thakur' == artist):
-        lyrics = poet_parser.readFile(poet_parser.home + "/robi_thakuru.txt")
+        lyrics = poet_parser.readFile(poet_parser.home + "/robi_thakur.txt")
         if(len(lyrics) == 0):
             lyrics = poet_parser.getPeoms(\
                 poet_parser.getHtmlFromUrl(\
