@@ -1,22 +1,26 @@
 <html>
- <body>
-  <div align="center" style="padding-top:20px;">
-   <h3 style="text-transform: capitalize;">Uttoradhunik {{ artist }}</h3>
-   <br />
-   <h2>
-   {% for line in result %}
-     {{ line }}<br />
-   {% endfor %}
-   </h2>
+  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div align="center" style="padding-top:20px;">
+    <h3 style="text-transform: capitalize;">Uttoradhunik {{ artist }}</h3>
+    <br />
+    <h2>
+    {% for line in result %}
+      {{ line }}<br />
+    {% endfor %}
+    </h2>
 
-   <form action="{{ url_for('index') }}">
-    <input type="submit" value="Do it again!" />
-   </form>
-  
-  <a href="https://twitter.com/shibli049" class="twitter-follow-button" data-show-count="false">Follow @shibli049</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <a class="github-button" href="https://github.com/shibli049/lyr_bn/fork" data-icon="octicon-repo-forked" data-count-href="/shibli049/lyr_bn/network" data-count-api="/repos/shibli049/lyr_bn#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork shibli049/lyr_bn on GitHub">Fork</a>
-  <a class="github-button" href="https://github.com/shibli049/lyr_bn" data-icon="octicon-star" data-count-href="/shibli049/lyr_bn/stargazers" data-count-api="/repos/shibli049/lyr_bn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shibli049/lyr_bn on GitHub">Star</a>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </div>
- </body>
+    <form action="{{ url_for('index') }}">
+      <input type="submit" value="Do it again!" />
+    </form>
+    
+    <a href="https://twitter.com/shibli049" class="twitter-follow-button" data-show-count="false">Follow @shibli049</a>
+    <a class="github-button" href="https://github.com/shibli049/lyr_bn/fork" data-icon="octicon-repo-forked" data-count-href="/shibli049/lyr_bn/network" data-count-api="/repos/shibli049/lyr_bn#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork shibli049/lyr_bn on GitHub">Fork</a>
+    <a class="github-button" href="https://github.com/shibli049/lyr_bn" data-icon="octicon-star" data-count-href="/shibli049/lyr_bn/stargazers" data-count-api="/repos/shibli049/lyr_bn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shibli049/lyr_bn on GitHub">Star</a>
+    </div>
+  </body>
 </html>

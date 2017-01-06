@@ -1,40 +1,44 @@
 <html>
- <body>
-   <div align="center" style="padding-top:20px; padding:1em;">
-     
-  <form action="{{ url_for('lyrics') }}" method="post" class="lyrics">
-      Poet name:
-      <!-- <input name="artist" type="text" /> -->
-        <select name="artist" style="text-transform: capitalize;">
-          {% for n in ['sukumar roy', 'jibonanondo das', 'robi thakur'] %}
-            <option value="{{n}}" >Uttoradhunik {{n}}</option>
+  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div align="center" style="padding-top:20px; padding:1em;">
+      
+    <form action="{{ url_for('lyrics') }}" method="post" class="lyrics">
+        Poet name:
+        <!-- <input name="artist" type="text" /> -->
+          <select name="artist" style="text-transform: capitalize;">
+            {% for n in ['sukumar roy', 'jibonanondo das', 'robi thakur'] %}
+              <option value="{{n}}" >Uttoradhunik {{n}}</option>
+            {% endfor %}
+          </select>
+        <br />
+        <br />
+        Number of lines:
+        <select name="lines">
+          {% for n in range(4,11) %}
+            <option value="{{n}}">{{n}}</option>
           {% endfor %}
         </select>
-      <br />
-      <br />
-      Number of lines:
-      <select name="lines">
-        {% for n in range(4,11) %}
-          <option value="{{n}}">{{n}}</option>
-        {% endfor %}
-      </select>
-      <br />
-      <br />
-      Version:
-      <select name="version">
-        {% for n in range(1,3) %}
-          <option value="{{n}}">v{{n}}</option>
-        {% endfor %}
-      </select>
-      <br /><br />
-      <input class="button" type="submit" value="Lyricize">
-  </form>
-  <br />
-  <a href="https://twitter.com/shibli049" class="twitter-follow-button" data-show-count="false">Follow @shibli049</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <a class="github-button" href="https://github.com/shibli049/lyr_bn/fork" data-icon="octicon-repo-forked" data-count-href="/shibli049/lyr_bn/network" data-count-api="/repos/shibli049/lyr_bn#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork shibli049/lyr_bn on GitHub">Fork</a>
-  <a class="github-button" href="https://github.com/shibli049/lyr_bn" data-icon="octicon-star" data-count-href="/shibli049/lyr_bn/stargazers" data-count-api="/repos/shibli049/lyr_bn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shibli049/lyr_bn on GitHub">Star</a>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-   </div>
- </body>
+        <br />
+        <br />
+        Version:
+        <select name="version">
+          {% for n in range(1,3) %}
+            <option value="{{n}}">v{{n}}</option>
+          {% endfor %}
+        </select>
+        <br /><br />
+        <input class="button" type="submit" value="Lyricize">
+    </form>
+    <br />
+    <a href="https://twitter.com/shibli049" class="twitter-follow-button" data-show-count="false">Follow @shibli049</a>
+    <a class="github-button" href="https://github.com/shibli049/lyr_bn/fork" data-icon="octicon-repo-forked" data-count-href="/shibli049/lyr_bn/network" data-count-api="/repos/shibli049/lyr_bn#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork shibli049/lyr_bn on GitHub">Fork</a>
+    <a class="github-button" href="https://github.com/shibli049/lyr_bn" data-icon="octicon-star" data-count-href="/shibli049/lyr_bn/stargazers" data-count-api="/repos/shibli049/lyr_bn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star shibli049/lyr_bn on GitHub">Star</a>
+    </div>
+  </body>
 </html>
 
