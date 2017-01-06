@@ -1,6 +1,7 @@
 <html>
   </head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Poem Generator : Uttoradhunik {{ artist }}</title>
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </head>
@@ -8,11 +9,11 @@
     <div align="center" style="padding-top:20px;">
     <h3 style="text-transform: capitalize;">Uttoradhunik {{ artist }}</h3>
     <br />
-    <h2>
+    
     {% for line in result %}
-      {{ line }}<br />
+      <span>{{ line }}<br /></span>
     {% endfor %}
-    </h2>
+    
 
     <form action="{{ url_for('index') }}">
       <input type="submit" value="Do it again!" />
