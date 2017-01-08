@@ -8,8 +8,6 @@ logging.basicConfig(level=logging.INFO,
 
 
 bn_wikisource_baseurl = "https://bn.wikisource.org"
-
-
 from os.path import expanduser
 home = expanduser("~")
 path = home + "/test.html"
